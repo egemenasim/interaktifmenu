@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -91,8 +93,8 @@ export default function RegisterPage() {
                                     type="button"
                                     onClick={() => setSelectedPlan(plan)}
                                     className={`p-4 border-2 rounded-lg text-left transition ${selectedPlan === plan
-                                            ? 'border-blue-600 bg-blue-50'
-                                            : 'border-gray-200 hover:border-gray-300'
+                                        ? 'border-blue-600 bg-blue-50'
+                                        : 'border-gray-200 hover:border-gray-300'
                                         }`}
                                 >
                                     <h3 className="font-semibold text-lg mb-1">{getPlanName(plan)}</h3>
