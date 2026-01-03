@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+
+export const dynamic = 'force-dynamic'
 import ProductCard from '@/components/digital-menu/product-card'
 import HappyHourIndicator from '@/components/digital-menu/happy-hour-indicator'
 

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { getCurrentPrice, formatPrice, isHappyHourActive } from '@/lib/utils/pricing'
 import Image from 'next/image'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PublicMenuPage({ params }: { params: { userId: string } }) {
     const supabase = createClient()
 

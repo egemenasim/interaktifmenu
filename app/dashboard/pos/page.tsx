@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PosPage() {
     const supabase = createClient()
 
@@ -81,8 +83,8 @@ export default async function PosPage() {
                                             <div
                                                 key={table.id}
                                                 className={`p-4 rounded-lg border-2 ${hasOrder
-                                                        ? 'bg-red-50 border-red-300'
-                                                        : 'bg-green-50 border-green-300'
+                                                    ? 'bg-red-50 border-red-300'
+                                                    : 'bg-green-50 border-green-300'
                                                     }`}
                                             >
                                                 <div className="text-center mb-3">

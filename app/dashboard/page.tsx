@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation'
 import { getPlanName, getPlanDescription } from '@/lib/utils/tier-check'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function DashboardPage() {
     const supabase = createClient()
 
