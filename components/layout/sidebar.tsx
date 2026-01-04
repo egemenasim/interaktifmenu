@@ -9,9 +9,10 @@ import { useRouter } from 'next/navigation'
 interface SidebarProps {
     userPlan: Plan
     restaurantName: string
+    onClose?: () => void
 }
 
-export default function Sidebar({ userPlan, restaurantName }: SidebarProps) {
+export default function Sidebar({ userPlan, restaurantName, onClose }: SidebarProps) {
     const pathname = usePathname()
     const router = useRouter()
     const supabase = createClient()
@@ -85,6 +86,7 @@ export default function Sidebar({ userPlan, restaurantName }: SidebarProps) {
                         <Link
                             key={item.name}
                             href={item.href}
+                            onClick={onClose}
                             className={`flex items-center px-4 py-3 rounded-lg transition ${isActive
                                 ? 'bg-blue-50 text-blue-700 font-medium'
                                 : 'text-gray-700 hover:bg-gray-50'
