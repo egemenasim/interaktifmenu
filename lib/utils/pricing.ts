@@ -14,9 +14,15 @@ export function getCurrentPrice(
         return regularPrice
     }
 
-    // Get current time in HH:MM format
+    // Get current time in HH:MM format in Turkey timezone
     const now = new Date()
-    const currentTime = now.toTimeString().slice(0, 5) // "HH:MM"
+    const options: Intl.DateTimeFormatOptions = {
+        timeZone: 'Europe/Istanbul',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    }
+    const currentTime = now.toLocaleTimeString('en-US', options) // "HH:MM"
 
     // Check if current time is within Happy Hour range
     if (currentTime >= happyHourStart && currentTime <= happyHourEnd) {
@@ -38,7 +44,13 @@ export function isHappyHourActive(
     }
 
     const now = new Date()
-    const currentTime = now.toTimeString().slice(0, 5)
+    const options: Intl.DateTimeFormatOptions = {
+        timeZone: 'Europe/Istanbul',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    }
+    const currentTime = now.toLocaleTimeString('en-US', options)
 
     return currentTime >= happyHourStart && currentTime <= happyHourEnd
 }
